@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Subreddit Assignment 2</title>
+</head>
+<body>
+<form id="search-form">
+  Subreddit Search:<br>
+  <input type="text" name="subreddit" value=""><br>
+  
+  <input type="submit" value="Submit">
+
+  <div id="loading"></div>
+
+
+
+  <div id="results">
+  	<template id="template">
+		<div class="profile">
+			
+
+		{{#each item}}
+
+			<h3>Title: <a href=
+				{{data.url}} target="_blank">{{data.title}}</a></h3>
+			<p>Score: {{data.score}}</p>
+
+			<p>Subreddit Subscribers: {{number-format data.subreddit_subscribers}}</p>
+
+			
+			{{#if data.num_comments}}
+
+				<p>Number of Comments: {{number-format data.num_comments}}</p>
+				{{else}}
+
+				<p>No Comments</p>
+
+
+			{{/if}}
+			
+
+		{{/each}}
+
+
+			
+		</div>
+		
+	</template>
+</div>
+
+  
+
+
+ <template id="template">
+		<div class="profile">
+			
+
+		{{#each item}}
+
+			<h3>Title: <a href=
+				{{data.url}} target="_blank">{{data.title}}</a></h3>
+			<p>Score: {{data.score}}</p>
+
+			<p>Subreddit Subscribers: {{number-format data.subreddit_subscribers}}</p>
+			
+
+		{{/each}}
+			
+		</div>
+		
+	</template>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<script src="handlebars-v4.0.11.js"></script>
+	<script src="assignment2.js"></script>
+
+</form>
+
+</body>
+</html>
